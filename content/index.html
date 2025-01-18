@@ -1,6 +1,11 @@
 [! extends "templates/wrappers/main.html" !]
 
 [! block body !]
+This site has moved to 
+<a href="https://site-builder.alanwsmith.com">site-builder.alanwsmith.com</a>
+
+[! endblock !]
+
 
 <div class="red">
   <pre>
@@ -53,14 +58,23 @@ THE FILE:
 <h2>To Consider</h2>
 <ul>
   <li>
-    TODO: Create a ____CONFIG____ section
+    TODO: When making lists of pages, do
+    it at the directory level (e.g. so you
+    can have <code>/blog</code>
+  </li>
+  <li>
+    TODO: Front matter, then optional ___HEAD___
+    and ___BODY___
   </li>
   <li>
     TODO: Move titles into configs
   </li>
   <li>
-    TODO: Create ____DATA:TYPE____ sections
-    that can handle json5 and csv to start with
+    TODO: Create ___DATA:TYPE___ sections
+    that can handle json5 and csv to start with.
+    This would then get turned into 
+    stringified json that can be passed
+    to page functions
   </li>
   <li>
     TODO: Move to using path including 
@@ -97,8 +111,16 @@ THE FILE:
 <h2>Someday/Maybe</h2>
 <ul>
   <li>
+    TODO: Minify CSS
+  </li>
+  <li>
+    TODO: Combine web components into
+    a single file
+  </li>
+  <li>
     TODO: Process markdown sections e.g.
-    using ____MARKDOWN____ or something
+    using ___MARKDOWN___ or something
+    and they back with ___HTML___
   </li>
   <li>
     TODO: Add a config for redirecting 
@@ -108,5 +130,4 @@ THE FILE:
   </li>
 </ul>
 
-[! endblock !]
 
