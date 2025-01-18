@@ -1,5 +1,6 @@
 use minijinja::syntax::SyntaxConfig;
 use minijinja::{context, Environment};
+use personal_ssg::page::*;
 use std::fs;
 use std::path::PathBuf;
 use walkdir::{DirEntry, WalkDir};
@@ -46,7 +47,6 @@ fn process_source_files(files: Vec<PathBuf>) {
             .build()
             .unwrap(),
     );
-
     let wrapper_path = "templates/wrappers/main.html";
     let wrapper_string = fs::read_to_string(&wrapper_path).unwrap();
     env.add_template_owned(wrapper_path, wrapper_string)
@@ -57,8 +57,10 @@ fn process_source_files(files: Vec<PathBuf>) {
     files.iter().for_each(|file| {
         let input_path = content_dir.join(file);
         let output_path = output_dir.join(file);
-        let content = fs::read_to_string(input_path).unwrap();
-        env.add_template_owned("working-file", content).unwrap();
+        let page = Page::new(fs::read_to_string(input_path).unwrap());
+        // let content = fs::read_to_string(input_path).unwrap();
+        env.add_template_owned("working-file", page.content)
+            .unwrap();
         match env.get_template("working-file") {
             Ok(template) => match template.render(context!()) {
                 Ok(output) => {
