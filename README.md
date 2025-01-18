@@ -1,3 +1,3 @@
-# Alan's Personal Static Site Generator
+# Alan's Site Builder
 
-[personal-ssg.alanwsmith.com](https://personal-ssg.alanwsmith.com/)
+[site-builder.alanwsmith.com](https://site-builder.ssg.alanwsmith.com/)
