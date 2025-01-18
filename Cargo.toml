@@ -1,5 +1,5 @@
 [package]
-name = "personal_ssg"
+name = "alans_site_builder"
 version = "0.1.0"
 edition = "2021"
 

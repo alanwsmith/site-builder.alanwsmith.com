@@ -1,6 +1,6 @@
+use alans_site_builder::page::*;
 use minijinja::syntax::SyntaxConfig;
 use minijinja::{context, Environment, Value};
-use personal_ssg::page::*;
 use std::fs;
 use std::path::PathBuf;
 use walkdir::{DirEntry, WalkDir};
