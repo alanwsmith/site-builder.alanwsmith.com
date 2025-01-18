@@ -31,6 +31,31 @@ impl Page {
         }
     }
 
+    pub fn highlight_file_lines(&self, args: &[Value]) -> Result<Value, Error> {
+        // TODO: Fix so you can't do `.../` etc...
+        if args.len() == 3 {
+            let content_dir = PathBuf::from("content");
+            let file_path = content_dir.join(args[0].to_string());
+            let content = fs::read_to_string(file_path).unwrap();
+            let highlighted_content = highlight_code(&content, "css");
+            let lines = highlighted_content.lines();
+            let start_line: usize = args[1].to_string().parse().unwrap();
+            let end_line: usize = args[2].to_string().parse().unwrap();
+            let output = lines
+                .into_iter()
+                .skip(start_line)
+                .take(end_line - start_line + 1)
+                .map(|l| l.to_string())
+                .collect::<Vec<String>>()
+                .join("\n");
+            Ok(Value::from(output))
+        } else {
+            Ok(Value::from(
+                "could not file file, or args problem with not enough args",
+            ))
+        }
+    }
+
     pub fn ping(&self) -> Result<Value, Error> {
         Ok(Value::from("this is stuff"))
     }
@@ -70,6 +95,8 @@ impl Page {
             ))
         }
     }
+
+    //
 }
 
 impl Object for Page {
@@ -82,6 +109,7 @@ impl Object for Page {
         match name {
             "ping" => self.ping(),
             "highlight_file" => self.highlight_file(args),
+            "highlight_file_lines" => self.highlight_file_lines(args),
             "include_file" => self.include_file(args),
             "include_file_lines" => self.include_file_lines(args),
             _ => Ok(Value::from("")),

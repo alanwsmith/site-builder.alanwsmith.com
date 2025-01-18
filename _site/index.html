@@ -26,12 +26,7 @@ body {
 </div>
 
 <hr />
-  <pre><code><span class="line-marker"></span><span class="source css"><span class="meta selector css"><span class="entity name tag css">body</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">background</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant other color rgb-value css"><span class="punctuation definition constant css">#</span>123</span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">color</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant other color rgb-value css"><span class="punctuation definition constant css">#</span>eee</span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span></span><span class="punctuation section property-list css">}</span>
-<span class="line-marker"></span>
-<span class="line-marker"></span><span class="meta selector css"><span class="entity other attribute-name class css"><span class="punctuation definition entity css">.</span>red</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
+  <pre><code><span class="line-marker"></span><span class="meta selector css"><span class="entity other attribute-name class css"><span class="punctuation definition entity css">.</span>red</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
 <span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">color</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="support constant color w3c-standard-color-name css">red</span></span><span class="punctuation terminator rule css">;</span>
 <span class="line-marker"></span></span><span class="punctuation section property-list css">}</span></span></code></pre>
 <hr />
@@ -44,26 +39,51 @@ body {
   </li>
   <li>
     DONE: Update when files change
+    (just using browser sync for now)
   </li>
   <li>
     DONE: Add a wrapper to the content
   </li>
   <li>
-    TODO: Be able to include other files
+    DONE: Be able to include other files
   </li>
   <li>
-    TODO: Clear list extensions to process with
-    minijinja and do a binary copy of everything
-    else
+    DONE: Be able to include individual lines
+    from other files
+  </li>
+  <li>
+    IN PROGRESS: Include files with highlighting.
+    (needs to use file extension to determine language)
+  </li>
+  <li>
+    IN PROGRESS: Include individual lines from 
+    files with highlighting. (needs to use file
+    extension to determine language)
+  </li>
 </ul>
+
 
 <!-- 
 <h2>Web Component Test</h2>
 <youtube-player video="E3vYVGMgZYY"></youtube-player>
 -->
 
-<h2>TODO Later</h2>
+<h2>To Consider</h2>
 <ul>
+  <li>
+    TODO: Create a ____CONFIG____ section
+  </li>
+  <li>
+    TODO: Move titles into configs
+  </li>
+  <li>
+    TODO: Create ____DATA:TYPE____ sections
+    that can handle json5 and csv to start with
+  </li>
+  <li>
+    TODO: Move to using path including 
+    "content" level and siblings for includes
+  </li>
   <li>
     TODO: Clear output directory before
     each run
@@ -71,15 +91,41 @@ body {
   <li>
     TODO: Make a link list for files
   </li>
+  <li>
+    TODO: Clear list extensions to process with
+    minijinja and do a binary copy of everything
+    else
+  </li>
+  <li>
+    TODO: Call images by just filename
+    without extension regardless of where 
+    they are in the images dir
+  </li>
+  <li>
+    TODO: Run the preview server from the app
+  </li>
+  <li>
+    TODO: Auto generate OG images (use name
+    with <em>-auto</em> or something so that
+    you can make manual images that get used
+    if they are available
+  </li>
 </ul>
 
 <h2>Someday/Maybe</h2>
 <ul>
   <li>
-    Run the preview engine from 
-    cargo itself
+    TODO: Process markdown sections e.g.
+    using ____MARKDOWN____ or something
+  </li>
+  <li>
+    TODO: Add a config for redirecting 
+    when files move (i.e. place a file
+    in the old location with a redirect
+    in it)
   </li>
 </ul>
+
 
   </body>
 
