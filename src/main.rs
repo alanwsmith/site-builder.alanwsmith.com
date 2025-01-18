@@ -1,5 +1,5 @@
 use minijinja::syntax::SyntaxConfig;
-use minijinja::{context, Environment};
+use minijinja::{context, Environment, Value};
 use personal_ssg::page::*;
 use std::fs;
 use std::path::PathBuf;
@@ -59,10 +59,10 @@ fn process_source_files(files: Vec<PathBuf>) {
         let output_path = output_dir.join(file);
         let page = Page::new(fs::read_to_string(input_path).unwrap());
         // let content = fs::read_to_string(input_path).unwrap();
-        env.add_template_owned("working-file", page.content)
+        env.add_template_owned("working-file", page.clone().content)
             .unwrap();
         match env.get_template("working-file") {
-            Ok(template) => match template.render(context!()) {
+            Ok(template) => match template.render(context!(page => Value::from_object(page))) {
                 Ok(output) => {
                     write_file_with_mkdir(&output_path, &output).unwrap();
                 }
