@@ -1,133 +1,21 @@
-[! extends "templates/wrappers/main.html" !]
-
-[! block body !]
-
-<div class="red">
-  <pre>
-THE FILE:
-[@ page.include_file("styles/main.css") @]
-  </pre>
-</div>
-
-<hr />
-  <pre><code>[@ page.highlight_file_lines("styles/main.css", 5, 7) @]</code></pre>
-<hr />
-
-<h2>TODO List</h2>
-<ul>
-  <li>
-    DONE: Move files from content dir to 
-    site output dir
-  </li>
-  <li>
-    DONE: Update when files change
-    (just using browser sync for now)
-  </li>
-  <li>
-    DONE: Add a wrapper to the content
-  </li>
-  <li>
-    DONE: Be able to include other files
-  </li>
-  <li>
-    DONE: Be able to include individual lines
-    from other files
-  </li>
-  <li>
-    IN PROGRESS: Include files with highlighting.
-    (needs to use file extension to determine language)
-  </li>
-  <li>
-    IN PROGRESS: Include individual lines from 
-    files with highlighting. (needs to use file
-    extension to determine language)
-  </li>
-</ul>
-
-
-<!-- 
-<h2>Web Component Test</h2>
-<youtube-player video="E3vYVGMgZYY"></youtube-player>
--->
-
-<h2>To Consider</h2>
-<ul>
-  <li>
-    TODO: If there's not front-matter just
-    pass the page through without passing
-    it through minijinja
-  <li>
-    TODO: When making lists of pages, do
-    it at the directory level (e.g. so you
-    can have <code>/blog</code>
-  </li>
-  <li>
-    TODO: Front matter, then optional ___HEAD___
-    and ___BODY___
-  </li>
-  <li>
-    TODO: Move titles into configs
-  </li>
-  <li>
-    TODO: Create ___DATA:TYPE___ sections
-    that can handle json5 and csv to start with.
-    This would then get turned into 
-    stringified json that can be passed
-    to page functions
-  </li>
-  <li>
-    TODO: Move to using path including 
-    "content" level and siblings for includes
-  </li>
-  <li>
-    TODO: Clear output directory before
-    each run
-  </li>
-  <li>
-    TODO: Make a link list for files
-  </li>
-  <li>
-    TODO: Clear list extensions to process with
-    minijinja and do a binary copy of everything
-    else
-  </li>
-  <li>
-    TODO: Call images by just filename
-    without extension regardless of where 
-    they are in the images dir
-  </li>
-  <li>
-    TODO: Run the preview server from the app
-  </li>
-  <li>
-    TODO: Auto generate OG images (use name
-    with <em>-auto</em> or something so that
-    you can make manual images that get used
-    if they are available
-  </li>
-</ul>
-
-<h2>Someday/Maybe</h2>
-<ul>
-  <li>
-    TODO: Minify CSS
-  </li>
-  <li>
-    TODO: Combine web components into
-    a single file
-  </li>
-  <li>
-    TODO: Process markdown sections e.g.
-    using ___MARKDOWN___ or something
-    and they back with ___HTML___
-  </li>
-  <li>
-    TODO: Add a config for redirecting 
-    when files move (i.e. place a file
-    in the old location with a redirect
-    in it)
-  </li>
-</ul>
-
-[! endblock !]
-
+<!doctype html>
+<html>
+  <head>
+    <title>Alan's Site Builder</title>
+    <style>
+      body {
+        background: black;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Alan's Site Builder</h1>
+    <h2>Archived</h2>
+    <p>This project was a prototype.</p>
+    <p>
+      The new project is at
+      <a href="https://ssbuild.alanwsmith.com/">ssbuild.alanwsmith.com</a>
+    </p>
+  </body>
+</html>
