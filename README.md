@@ -1,3 +1,7 @@
-# Alan's Personal Static Site Generator
+# Alan's Site Builder
 
-[personal-ssg.alanwsmith.com](https://personal-ssg.alanwsmith.com/)
+This project was a prototype.
+
+It's archived now. 
+
+See: [ssbuild.alanwsmith.com](https://ssbuild.alanwsmith.com/)
